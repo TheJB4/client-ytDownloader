@@ -22,7 +22,7 @@ function App() {
           e.preventDefault()
           console.log(urlVideo)
 
-          axios.get(`https://api-yt-downloader-9i4o.vercel.app/infoVideo/generateLink/mp3/?urlVideo=${urlVideo}`, { responseType: 'arraybuffer', headers: { 'Content-Type': 'application/json' } })
+          axios.get(`http://api-yt-downloader-9i4o-mlasgqwvw-thejb4.vercel.app/generateLink/mp3/?urlVideo=${urlVideo}`, { responseType: 'arraybuffer', headers: { 'Content-Type': 'application/json' } })
             .then(res => {
               const url = window.URL.createObjectURL(new Blob([res.data]));
               const link = document.createElement('a');
@@ -47,7 +47,7 @@ function App() {
           className='w-32 h-14 bg-color1 text-white font-bold ml-5'
           onClick={(e) => {
             e.preventDefault()
-            axios.get(`https://api-yt-downloader-9i4o.vercel.app/infoVideo/?urlVideo=${urlVideo}`, { headers: { 'Content-Type': 'application/json' } })
+            axios.get(`https://api-yt-downloader-9i4o.vercel.app/infoVideo?urlVideo=${urlVideo}`, { headers: { 'Content-Type': 'application/json' } })
               .then(res => {
                 return res
               }).then(data => {
@@ -127,7 +127,7 @@ function App() {
                       setLoadingDownload(true)
                       e.preventDefault()
                       console.log(urlVideo)
-                      axios.get(`http://localhost:3000/generateLink/Mp4/?urlVideo=${urlVideo}&quality=1080p`, { responseType: 'arraybuffer'})
+                      axios.get(`https://api-yt-downloader-9i4o.vercel.app/generateLink/Mp4/?urlVideo=${urlVideo}&quality=1080p`, { responseType: 'arraybuffer'})
                         .then(res => {
                           const url = window.URL.createObjectURL(new Blob([res.data]));
                           const link = document.createElement('a');
